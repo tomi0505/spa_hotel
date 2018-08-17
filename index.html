@@ -11,7 +11,7 @@
     <body>
      <header class="header">
          <nav class="nav">
-            <div class="language">PL</div>
+            <aside class="language">PL</aside>
             <h1 class="logo">
                 <a href="index.html">
                     <img src="_assets/img/logo.png" alt="hotel spa">
@@ -30,12 +30,12 @@
                  <li><a href="#">KONTAKT</a></li>
              </ul>
          </nav>
-         <aside class="reservation">
+         <section class="reservation">
              <h2>
                 CENY I REZERWACJA
                 <span class="subtitle">GWARANCJA NAJNIŻSZEJ CENY</span>
             </h2>
-         </aside>
+         </section>
          <h2 class="title">
             ZACHWYCISZ SIĘ
             <span class="subtitle">"Jeden z naszych ulubionych hoteli w Beskidach."</span>
@@ -45,8 +45,25 @@
             <h2 class="counter">9/10</h2>
             OCENA GOŚCI
         </section>
-        <span class="fas fa-angle-down" id="slide-down-btn" role="button" tabindex="0"></span>
+        <a href="#packets" class="fas fa-angle-down" id="slide-down-btn"></a>
      </header>
+     <main>
+         <section class="packets" id="packets">
+             <header>
+                 <h2 class="title">PAKIETY POBYTOWE</h2>
+                 <h3 class="subtitle">Rezerwuj i oszczędzaj! Zadzwoń: 33 854 43 33</h3>
+             </header>
+            <figure class="slider">
+                <img src="_assets/img/image0.png" id="picture" alt="">
+                <figcaption class="figcaption">WSPANIAŁE WAKACJE 2016</figcaption>
+                <button id="prev"></button>
+                <button id="next"></button>
+                <div class="overlay">
+                    <button class="preview">ZOBACZ</button>
+                </div>
+            </figure>
+         </section>
+     </main>
     <script src="_assets/scripts/script.js"></script>
     </body>
 </html>

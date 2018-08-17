@@ -10,6 +10,19 @@ body {
 	text-align: center;
 }
 
+body * {
+	outline: none;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+}
+
+a {
+	text-decoration: none;
+}
+
 /*--HEADER--*/
 .header {
 	display: flex;
@@ -27,6 +40,22 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	font-weight: 800;
+}
+
+/*LANGUAGE*/
+.header .language:hover {
+	text-decoration: underline;
+}
+
+/*LOGO*/
+.header .logo {
+	transition: 1s;
+}
+
+.header .logo:hover,
+.header #hamburger-btn:hover,
+.header #slide-down-btn:hover {
+	transform: scale(1.1, 1.1);
 }
 
 /*MENU*/
@@ -76,6 +105,7 @@ body {
 .header .title {
 	font-size: 2.9rem;
 	font-weight: 200;
+	letter-spacing: 7px;
 }
 
 .header .title .subtitle {
@@ -84,6 +114,7 @@ body {
 	font-size: 1.4rem;
 	font-weight: 200;
 	font-style: italic;
+	letter-spacing: normal;
 }
 
 .header .title img {
@@ -114,4 +145,106 @@ body {
 .header #slide-down-btn {
 	margin-bottom: 5px;
 	font-size: 1.7rem;
+	color: #ffffff;
+}
+
+
+/*--MAIN--*/
+/*I_PACKETS*/
+.packets {
+	margin: 35px 0;
+	color: #000000;
+}
+
+.packets header {
+	letter-spacing: 7px;
+}
+
+.packets .title {
+	font-size: 2rem;
+	font-weight: 200;
+}
+
+.packets .subtitle {
+	margin: 15px 0;
+	font-size: 1.3rem;
+	color: #888888;
+	line-height: 20px;
+}
+
+/*SLIDER*/
+.packets .slider {
+	position: relative;
+	font-size: 1.3rem;
+	font-weight: 800;
+}
+
+.packets .slider img {
+	width: 100%;
+	height: 100%;
+}
+
+.packets .slider .figcaption {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #ffffff;
+	transform: translateY(100%);
+	z-index: 1;
+}
+
+/*BTNS_SLIDER*/
+.packets .slider #prev,
+.packets .slider #next {
+	padding: 4px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	background-image: url(../img/prev.png);
+	background-repeat: no-repeat;
+	background-size: 50% 50%;
+	background-position: center;
+	transform: translateY(-50%);
+	background-color: rgba(255,255,255,.9);
+	z-index: 1;
+}
+
+.packets .slider #next {
+	left: auto;
+	right: 0;
+	background-image: url(../img/next.png);
+}
+
+.packets .slider #prev:hover,
+.packets .slider #next:hover {
+	background-color: rgba(255,255,255,1);
+}
+
+/*OVERLAY*/
+.packets .slider .overlay {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.1);
+}
+
+.packets .slider .overlay .preview {
+	padding: 10px 30px;
+	color: #ffffff;
+	font-weight: 800;
+	border: 1px solid #ffffff;
+	z-index: 1;
+}
+
+.packets .slider:hover .overlay {
+	display: flex;
 }
