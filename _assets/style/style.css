@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300');
+
+html {
+	font-size: 14px;
+}
+
+body {
+	font-family: 'Raleway', sans-serif;
+	color: #ffffff;
+	text-align: center;
+}
+
+/*--HEADER--*/
+.header {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100vh;
+	background-image: url(../img/bg_header.png);
+	background-size: 100% 100%;
+}
+
+/*NAV*/
+.header .nav {
+	padding: 5px 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 800;
+}
+
+/*MENU*/
+.header .nav .menu {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #ffffff;
+}
+
+.header .nav .menu li {
+	padding: 10px;
+}
+
+.header .nav .menu a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.header .nav .menu a:hover {
+	text-decoration: underline;
+}
+
+/*RESERVATION*/
+.header .reservation {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 330px;
+	height: 75px;
+	font-size: 1.3rem;
+	font-weight: 800;
+	line-height: 25px;
+	background-color: #841f1f;
+}
+
+.header .reservation .subtitle {
+	display: block;
+	font-size: 1rem;
+	font-weight: 300;
+}
+
+/*TITLE*/
+.header .title {
+	font-size: 2.9rem;
+	font-weight: 200;
+}
+
+.header .title .subtitle {
+	margin: 13px 0;
+	display: block;
+	font-size: 1.4rem;
+	font-weight: 200;
+	font-style: italic;
+}
+
+.header .title img {
+	width: 40px;
+	height: 39px;
+}
+
+/*RATING*/
+.header .rating {
+	margin: 0 auto;
+	padding: 15px;
+	width: 56px;
+	height: 56px;
+	font-size: 1rem;
+	font-weight: 600;
+	border: 1px solid #ffffff;
+	background-color: rgba(0,0,0,.3);
+}
+
+.header .rating .counter {
+	margin-bottom: 10px;
+	display: block;
+	font-size: 1.3rem;
+	font-weight: 800;
+}
+
+/*SLIDE-DOWN-BTN*/
+.header #slide-down-btn {
+	margin-bottom: 5px;
+	font-size: 1.7rem;
+}
