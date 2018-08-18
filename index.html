@@ -6,10 +6,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
         <link rel="stylesheet" href="_assets/style/reset.css">
         <link rel="stylesheet" href="_assets/style/style.css">
+        <link rel="stylesheet" href="_assets/style/rwd.css">
         <title>SPA</title>
     </head>
     <body>
-     <header class="header">
+     <header class="header" id="header">
          <nav class="nav">
             <aside class="language">PL</aside>
             <h1 class="logo">
@@ -18,17 +19,35 @@
                 </a>
             </h1>
              <span class="fas fa-bars" id="hamburger-btn" role="button" tabindex="0"></span>
-             <ul class="menu">
-                 <li><a href="#">HOTEL</a></li>
+             <ol class="menu">
+                 <li><a href="#">HOTEL</a>
+                    <ul>
+                        <li><a href="#">item 1</a></li>
+                        <li><a href="#">item 2</a></li>
+                    </ul>
+                 </li>
                  <li><a href="#">POKOJE</a></li>
-                 <li><a href="#">PAKIETY</a></li>
+                 <li><a href="#">PAKIETY</a>
+                    <ul>
+                        <li><a href="#">item 1</a></li>
+                        <li><a href="#">item 2</a></li>
+                        <li><a href="#">item 3</a></li>
+                        <li><a href="#">item 4</a></li>
+                    </ul>
+                 </li>
                  <li><a href="#">SPA</a></li>
                  <li><a href="#">RESTAURACJA</a></li>
                  <li><a href="#">GALERIA</a></li>
-                 <li><a href="#">KONFERENCJA</a></li>
+                 <li><a href="#">KONFERENCJA</a>
+                    <ul>
+                        <li><a href="#">item 1</a></li>
+                        <li><a href="#">item 2</a></li>
+                        <li><a href="#">item 3</a></li>
+                    </ul>
+                 </li>
                  <li><a href="#">WESELE</a></li>
                  <li><a href="#">KONTAKT</a></li>
-             </ul>
+             </ol>
          </nav>
          <section class="reservation">
              <h2>
@@ -54,16 +73,129 @@
                  <h3 class="subtitle">Rezerwuj i oszczędzaj! Zadzwoń: 33 854 43 33</h3>
              </header>
             <figure class="slider">
-                <img src="_assets/img/image0.png" id="picture" alt="">
+                <img src="_assets/img/image0.png" class="fullWidth" id="picture" alt="">
                 <figcaption class="figcaption">WSPANIAŁE WAKACJE 2016</figcaption>
                 <button id="prev"></button>
                 <button id="next"></button>
                 <div class="overlay">
-                    <button class="preview">ZOBACZ</button>
+                    <button class="preview-btn">ZOBACZ</button>
                 </div>
             </figure>
          </section>
+         <section class="rooms">
+             <section class="content">
+                 <h2 class="article-title">POKOJE</h2>
+                 <p class="article-content">Hotel **** oferuje 131 miejsc noclegowych w 57 pokojach dwu- i trzyosobowych, studiach Junior i Senior oraz w luksusowym Apartamencie Prezydenckim. Cały obiekt jest w pełni klimatyzowany. Hotel jest również przystosowany do przyjęcia osób niepełnosprawnych.</p>
+                 <button class="article-btn">WYBIERZ SWÓJ POKÓJ</button>
+             </section>
+         </section>
+         <section class="spa">
+            <figure class="slider">
+                <img src="_assets/img/spa_img0.png" class="fullWidth" id="spaImg" alt="spa">
+                <div class="navigation">
+                    <button class="prev"></button>
+                    <button class="stop"></button>
+                    <button class="next"></button>
+                </div>
+            </figure>
+             <section class="content">
+                 <h2 class="article-title">SPA</h2>
+                 <p class="article-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                 <button class="article-btn">DOWIEDZ SIĘ WIĘCEJ</button>
+             </section>
+         </section>
+         <section class="localization">
+             <section class="content">
+                 <h2 class="article-title">PIĘKNA LOKALIZACJA</h2>
+                 <p class="article-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                 <button class="article-btn">ODKRYJ TO MIEJSCE</button>
+             </section>
+         </section>
+         <section class="conference">
+            <figure class="slider">
+                <img src="_assets/img/conference_img0.png" class="fullWidth" id="conferenceImg" alt="konferencja">
+                <div class="navigation">
+                    <button class="prev"></button>
+                    <button class="stop"></button>
+                    <button class="next"></button>
+                </div>
+            </figure>
+             <section class="content">
+                 <h2 class="article-title">KONFERENCJE</h2>
+                 <p class="article-content">Hotel **** to idealne miejsce nie tylko na odpoczynek, ale również integrację, szkolenie, event firmowy  oraz konferencję. Zapewniamy profesjonalną opiekę koordynatora oraz pomoc techniczną podczas spotkania.Dysponujemy 4 nowoczesnymi, w pełni wyposażonymi salami konferencyjnymi.</p>
+                 <button class="article-btn">SPRAWDŹ NASZĄ OFERTĘ</button>
+             </section>
+         </section>
+         <section class="relax">
+             <section class="content">
+                 <h2 class="article-title">WYPOCZYNEK Z RODZINĄ</h2>
+                 <p class="article-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+             </section>
+         </section>
+         <section class="contact">
+             <aside class="map">
+                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.789495052599!2d19.93449631589523!3d50.07150382247764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b06a45d972b%3A0x30ed2e964d1d4b82!2sMagia+Day+Spa!5e0!3m2!1spl!2spl!4v1534515877209" frameborder="0" style="border:0" allowfullscreen></iframe>
+             </aside>
+             <div class="content">
+                 <address class="address">
+                     <span>HOTEL ****</span>
+                     <span>ul. Przykładowa 23</span>
+                     <span>44 - 444 Przykład</span>
+                 </address>
+                 <h4 class="title">REZERWUJ BEZ POŚREDNIKÓW I OSZCZĘDZAJ!</h4>
+                 <section class="businessCard">
+                     <h2 class="title">RECEPCJA</h2>
+                     <address class="address">
+                         <span>tel.: +48 33 888 77 66</span>
+                         <span>recepcja@hotel.pl</span>
+                     </address>
+                 </section>
+             </div>
+             <section class="newsletter">
+                 <h2 class="article-title">ZAMÓW KOD RABATOWY!</h2>
+                 <p class="article-content">Podaj swój adres email, a otrzymasz jednorazowy kod rabatowy -10%. Sprawdź warunki promocji i oszczędzaj!.</p>
+                 <form>
+                     <div class="row">
+                         <input type="email" name="email" class="email" placeholder="adres email...">
+                         <button type="submit" class="article-btn" id="send-btn">WYŚLIJ</button>
+                     </div>
+                     <div class="row">
+                         <input type="checkbox" name="checkbox" id="accept">
+                         <label for="accept">Akceptuję regulamin promocji.</label>
+                     </div>
+                 </form>
+             </section>
+         </section>
      </main>
+     <footer class="footer">
+         <div class="author">
+             <p>Copyright &copy; 2016 Hotel.pl</p>
+             <p>Realizacja: intellect.pl</p>
+         </div>
+         <address class="address">
+             <span>recepcja@hotel.pl</span>
+             <span>Tel.: +48 33 888 77 66</span>
+         </address>
+         <aside class="social-icons">
+            <a href="#">
+                <img src="_assets/img/facebook.svg" alt="facebook">
+            </a>
+            <a href="#">
+                <img src="_assets/img/instagram.svg" alt="instagram">
+            </a>
+            <a href="#">
+                <img src="_assets/img/tripadvisor.svg" alt="tripadvisor">
+            </a>
+            <a href="#">
+                <img src="_assets/img/holidaycheck.svg" alt="holidaycheck">
+            </a>
+         </aside>
+         <button id="top-btn">
+             <a href="#header">
+                <img src="_assets/img/up-arrow.png" alt="">
+            </a>
+         </button>
+     </footer>
     <script src="_assets/scripts/script.js"></script>
     </body>
 </html>
