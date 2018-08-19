@@ -37,6 +37,11 @@
                  </li>
                  <li><a href="#">SPA</a></li>
                  <li><a href="#">RESTAURACJA</a></li>
+                 <li class="innerLogo">
+                     <a href="index.html">
+                         <img src="_assets/img/logo.png" alt="hotel spa">
+                     </a>
+                 </li>
                  <li><a href="#">GALERIA</a></li>
                  <li><a href="#">KONFERENCJA</a>
                     <ul>
@@ -72,15 +77,31 @@
                  <h2 class="title">PAKIETY POBYTOWE</h2>
                  <h3 class="subtitle">Rezerwuj i oszczędzaj! Zadzwoń: 33 854 43 33</h3>
              </header>
-            <figure class="slider">
-                <img src="_assets/img/image0.png" class="fullWidth" id="picture" alt="">
-                <figcaption class="figcaption">WSPANIAŁE WAKACJE 2016</figcaption>
+            <div class="slider">
+                <figure class="imgContainer">
+                    <img src="_assets/img/image0.png" class="picture fullWidth" alt="">
+                    <figcaption class="figcaption">WSPANIAŁE WAKACJE 2016</figcaption>
+                    <div class="overlay">
+                        <button class="preview-btn">ZOBACZ</button>
+                    </div>
+                </figure>
+                <figure class="imgContainer">
+                    <img src="_assets/img/image1.png" class="picture hidden fullWidth" alt="">
+                    <figcaption class="figcaption">WSPANIAŁE WAKACJE 2016</figcaption>
+                    <div class="overlay">
+                        <button class="preview-btn">ZOBACZ</button>
+                    </div>
+                </figure>
+                <figure class="imgContainer">
+                    <img src="_assets/img/image2.png" class="picture hidden fullWidth" alt="">
+                    <figcaption class="figcaption">WSPANIAŁE WAKACJE 2016</figcaption>
+                    <div class="overlay">
+                        <button class="preview-btn">ZOBACZ</button>
+                    </div>
+                </figure>
                 <button id="prev"></button>
                 <button id="next"></button>
-                <div class="overlay">
-                    <button class="preview-btn">ZOBACZ</button>
-                </div>
-            </figure>
+            </div>
          </section>
          <section class="rooms">
              <section class="content">
@@ -136,35 +157,39 @@
              <aside class="map">
                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.789495052599!2d19.93449631589523!3d50.07150382247764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b06a45d972b%3A0x30ed2e964d1d4b82!2sMagia+Day+Spa!5e0!3m2!1spl!2spl!4v1534515877209" frameborder="0" style="border:0" allowfullscreen></iframe>
              </aside>
-             <div class="content">
-                 <address class="address">
-                     <span>HOTEL ****</span>
-                     <span>ul. Przykładowa 23</span>
-                     <span>44 - 444 Przykład</span>
-                 </address>
-                 <h4 class="title">REZERWUJ BEZ POŚREDNIKÓW I OSZCZĘDZAJ!</h4>
-                 <section class="businessCard">
-                     <h2 class="title">RECEPCJA</h2>
-                     <address class="address">
-                         <span>tel.: +48 33 888 77 66</span>
-                         <span>recepcja@hotel.pl</span>
-                     </address>
+             <div class="row">
+                 <div class="content">
+                     <div class="row">
+                         <address class="address">
+                             <span>HOTEL ****</span>
+                             <span>ul. Przykładowa 23</span>
+                             <span>44 - 444 Przykład</span>
+                         </address>
+                         <h4 class="title">REZERWUJ BEZ POŚREDNIKÓW I OSZCZĘDZAJ!</h4>
+                     </div>
+                     <section class="businessCard">
+                         <h2 class="title">RECEPCJA</h2>
+                         <address class="address">
+                             <span>tel.: +48 33 888 77 66</span>
+                             <span>recepcja@hotel.pl</span>
+                         </address>
+                     </section>
+                 </div>
+                 <section class="newsletter">
+                     <h2 class="article-title">ZAMÓW KOD RABATOWY!</h2>
+                     <p class="article-content">Podaj swój adres email, a otrzymasz jednorazowy kod rabatowy -10%. Sprawdź warunki promocji i oszczędzaj!.</p>
+                     <form>
+                         <div class="row">
+                             <input type="email" name="email" class="email" placeholder="adres email...">
+                             <button type="submit" class="article-btn" id="send-btn">WYŚLIJ</button>
+                         </div>
+                         <div class="row">
+                             <input type="checkbox" name="checkbox" id="accept">
+                             <label for="accept">Akceptuję regulamin promocji.</label>
+                         </div>
+                     </form>
                  </section>
              </div>
-             <section class="newsletter">
-                 <h2 class="article-title">ZAMÓW KOD RABATOWY!</h2>
-                 <p class="article-content">Podaj swój adres email, a otrzymasz jednorazowy kod rabatowy -10%. Sprawdź warunki promocji i oszczędzaj!.</p>
-                 <form>
-                     <div class="row">
-                         <input type="email" name="email" class="email" placeholder="adres email...">
-                         <button type="submit" class="article-btn" id="send-btn">WYŚLIJ</button>
-                     </div>
-                     <div class="row">
-                         <input type="checkbox" name="checkbox" id="accept">
-                         <label for="accept">Akceptuję regulamin promocji.</label>
-                     </div>
-                 </form>
-             </section>
          </section>
      </main>
      <footer class="footer">

@@ -48,6 +48,34 @@ document.addEventListener("DOMContentLoaded", ()=> {
  		next.addEventListener("click", ()=> {
  			slide(1);
  		}, false);
+	 } else {
+
+			next.addEventListener("click", ()=> {
+				let picture = document.querySelectorAll(".picture");
+				picture = [...picture];
+
+				i = (i + 1) % 3;
+
+				picture.forEach((imgs)=> {
+					imgs.setAttribute("src", `_assets/img/image${i+3}.png`)
+					i = (i + 1) % 3;
+				});
+
+			}, false);
+
+			prev.addEventListener("click", ()=> {
+				let picture = document.querySelectorAll(".picture");
+				picture = [...picture];
+
+				i = (i + 1) % 3;
+
+				picture.forEach((imgs)=> {
+					imgs.setAttribute("src", `_assets/img/image${i}.png`)
+					i = (i + 1) % 3;
+				});
+
+			}, false);
+
 	 }
 	 
 
@@ -60,7 +88,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 		spaSlider(2);
 	}, false);
 
-	spaStopBtn.addEventListener("click", () => {
+	spaStopBtn.addEventListener("click", ()=> {
 		clearInterval(spaAutoSlider);
 	}, false);
 
@@ -95,20 +123,23 @@ document.addEventListener("DOMContentLoaded", ()=> {
 	const conferenceAutoSlider = setInterval(()=> {
 		conferenceSlider(1);
 	}, 7000);
-
-
-	//COONFIDENT_BODY_BACKGROUND_IMAGE_IS_100VH
-	const bodyEl = document.querySelector("body");
-	bodyEl.style.backgroundSize = "100vw " + window.innerHeight + "px";
+	
 
 }, false);
 
 
 // SLIDE
 function slide(d) {
-	const picture = document.getElementById("picture");
-	i = (i+d) % 3;
-	picture.setAttribute("src", `_assets/img/image${i}.png`);
+	
+	let picture = document.querySelectorAll(".picture");
+	picture = [...picture];
+
+	i = (i + d) % 3;
+
+	picture.forEach((imgs)=> {
+		imgs.setAttribute("src", `_assets/img/image${i}.png`);
+	});
+
 }
 
 
@@ -126,10 +157,3 @@ function conferenceSlider(d) {
 	conferenceImgCounter = (conferenceImgCounter + d) % 3;
 	conferenceImg.setAttribute("src", `_assets/img/conference_img${conferenceImgCounter}.png`);
 }
-
-
-//COONFIDENT_BODY_BACKGROUND_IMAGE_IS_100VH
-window.onresize = function () {
-	const bodyEl = document.querySelector("body");
-	bodyEl.style.backgroundSize = "100vw " + window.innerHeight + "px";
-};
