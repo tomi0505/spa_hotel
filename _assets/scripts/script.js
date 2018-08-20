@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 		conferenceSlider(2);
 	}, false);
 
-	conferenceStopBtn.addEventListener("click", () => {
+	conferenceStopBtn.addEventListener("click", ()=> {
 		clearInterval(conferenceAutoSlider);
 	}, false);
 
@@ -123,7 +123,39 @@ document.addEventListener("DOMContentLoaded", ()=> {
 	const conferenceAutoSlider = setInterval(()=> {
 		conferenceSlider(1);
 	}, 7000);
-	
+
+
+	// #AJAX#
+	const sendBtn = document.getElementById("send-btn");
+
+	sendBtn.addEventListener("click", (e)=> {
+
+		e.preventDefault();
+
+		const url = "http://tomaszgrzyb.eu/projects/intellect/service.php";
+
+		const request = new XMLHttpRequest();
+		request.open("GET", url);
+
+		request.onload = function () {
+
+			if (request.status == 200) {
+
+				alert("Odebrano dane.");
+
+			}
+
+		};
+
+		request.error = function () {
+
+			alert("Coś poszło nie tak!!");
+
+		};
+
+		request.send(null);
+
+	}, false);
 
 }, false);
 
