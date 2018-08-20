@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 		e.preventDefault();
 
-		const url = "http://tomaszgrzyb.eu/projects/intellect/service.php";
+		const url = "http://tomaszgrzyb.eu/projects/intellect/zap.php";
 
 		const request = new XMLHttpRequest();
 		request.open("GET", url);
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 			if (request.status == 200) {
 
-				alert("Odebrano dane.");
+				alert(request.responseText);
 
 			}
 
