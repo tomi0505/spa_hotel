@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 			if (request.status == 200) {
 
-				alert(request.responseText);
+				pageRequest(request.responseText);
 
 			}
 
@@ -188,4 +188,14 @@ function conferenceSlider(d) {
 	const conferenceImg = document.getElementById("conferenceImg");
 	conferenceImgCounter = (conferenceImgCounter + d) % 3;
 	conferenceImg.setAttribute("src", `_assets/img/conference_img${conferenceImgCounter}.png`);
+}
+
+
+// PAGE_REQUEST
+function pageRequest(obj) {	
+
+	const data = JSON.parse(obj);
+
+	alert(`${data.name} ${data.surname}\nZapisałeś się do newsletter-a!`);
+
 }
