@@ -191,9 +191,22 @@ html {
 }
 
 .header .nav .menu li > ul {
+	margin-top: 5px;
 	position: absolute;
 	width: 150%;
 	transform: translateX(-20%);
+}
+
+/*TRIANGLE*/
+.header .nav .menu li > ul::before {
+	content: "";
+	position: absolute;
+	top: -8px;
+	left: 50%;
+	border-bottom: 10px solid #712d24;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	transform: translateX(-50%);
 }
 
 /*RESERVATION*/

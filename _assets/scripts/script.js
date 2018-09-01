@@ -124,6 +124,25 @@ document.addEventListener("DOMContentLoaded", ()=> {
 		conferenceSlider(1);
 	}, 7000);
 
+	
+	// SMOOTH_SCROLL_100VH_HEADER
+	const slideDownBtn = document.getElementById("slide-down-btn");
+
+	slideDownBtn.addEventListener("click", (e) => {
+		e.preventDefault();
+		const header = document.getElementById("header");
+		window.smoothScrollTo(0, header.clientHeight, 2000);
+	}, false);
+
+
+	// SMOOTH_SCROLL_TO_TOP
+	const topBtn = document.getElementById("top-btn");
+
+	topBtn.addEventListener("click", (e)=> {
+		e.preventDefault();
+		window.smoothScrollTo(0, 0, 2000);
+	}, false);
+
 
 	// #AJAX#
 	const sendBtn = document.getElementById("send-btn");
@@ -199,3 +218,37 @@ function pageRequest(obj) {
 	alert(`${data.name} ${data.surname}\nZapisałeś się do newsletter-a!`);
 
 }
+
+
+// SMOOTH_SCROLL_SCRIPT
+/**
+ * Smooth scroll animation
+ * @param {int} endX: destination x coordinate
+ * @param {int) endY: destination y coordinate
+ * @param {int} duration: animation duration in ms
+ */
+window.smoothScrollTo = function (endX, endY, duration) {
+	var startX = window.scrollX || window.pageXOffset,
+		startY = window.scrollY || window.pageYOffset,
+		distanceX = endX - startX,
+		distanceY = endY - startY,
+		startTime = new Date().getTime();
+
+	duration = typeof duration !== 'undefined' ? duration : 400;
+
+	// Easing function
+	var easeInOutQuart = function (time, from, distance, duration) {
+		if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
+		return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+	};
+
+	var timer = window.setInterval(function () {
+		var time = new Date().getTime() - startTime,
+			newX = easeInOutQuart(time, startX, distanceX, duration),
+			newY = easeInOutQuart(time, startY, distanceY, duration);
+		if (time >= duration) {
+			window.clearInterval(timer);
+		}
+		window.scrollTo(newX, newY);
+	}, 1000 / 60); // 60 fps
+};
