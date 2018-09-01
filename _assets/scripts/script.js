@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 	const nav = document.querySelector(".nav");
 	const prev = document.getElementById("prev");
 	const next = document.getElementById("next");
+	series = true;
 
 	const navHeight = nav.clientHeight;
 
@@ -50,31 +51,10 @@ document.addEventListener("DOMContentLoaded", ()=> {
  		}, false);
 	 } else {
 
-			next.addEventListener("click", ()=> {
-				let picture = document.querySelectorAll(".picture");
-				picture = [...picture];
+			setInterval(imageSwitch, 5000);
 
-				i = (i + 1) % 3;
-
-				picture.forEach((imgs)=> {
-					imgs.setAttribute("src", `_assets/img/image${i+3}.png`)
-					i = (i + 1) % 3;
-				});
-
-			}, false);
-
-			prev.addEventListener("click", ()=> {
-				let picture = document.querySelectorAll(".picture");
-				picture = [...picture];
-
-				i = (i + 1) % 3;
-
-				picture.forEach((imgs)=> {
-					imgs.setAttribute("src", `_assets/img/image${i}.png`)
-					i = (i + 1) % 3;
-				});
-
-			}, false);
+			next.addEventListener("click", imageSwitch, false);
+			prev.addEventListener("click", imageSwitch, false);
 
 	 }
 	 
@@ -194,6 +174,33 @@ function slide(d) {
 }
 
 
+// IMAGE_SWITCH
+function imageSwitch() {
+	
+	let picture = document.querySelectorAll(".picture");
+	picture = [...picture];
+
+	if (series) {
+		picture.forEach((imgs) => {
+			const srcImgs = imgs.getAttribute("src");
+			let nrImgs = parseInt(srcImgs.substr(srcImgs.length - 5).split(".")[0], 10);
+			const newSeries = nrImgs + picture.length;
+			imgs.setAttribute("src", `_assets/img/image${newSeries}.png`);
+			series = false;
+		});
+	} else {
+		picture.forEach((imgs) => {
+			const srcImgs = imgs.getAttribute("src");
+			let nrImgs = parseInt(srcImgs.substr(srcImgs.length - 5).split(".")[0], 10);
+			const newSeries = nrImgs - picture.length;
+			imgs.setAttribute("src", `_assets/img/image${newSeries}.png`);
+			series = true;
+		});
+	}
+
+}
+
+
 // SPA_SLIDER
 function spaSlider(d) {
 	const spaImg = document.getElementById("spaImg");
@@ -220,7 +227,7 @@ function pageRequest(obj) {
 }
 
 
-// SMOOTH_SCROLL_SCRIPT
+// SMOOTH_SCROLL_EXTERNAL_SCRIPT
 /**
  * Smooth scroll animation
  * @param {int} endX: destination x coordinate
