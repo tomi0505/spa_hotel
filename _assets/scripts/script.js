@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 
 		e.preventDefault();
 
-		const url = "http://tomaszgrzyb.eu/projects/intellect/zap.php";
+		const url = "http://tomaszgrzyb.eu/projects/spa_hotel/zap.php";
 
 		const request = new XMLHttpRequest();
 		request.open("GET", url);
