@@ -20,14 +20,14 @@
             </h1>
              <span class="fas fa-bars" id="hamburger-btn" role="button" tabindex="0"></span>
              <ol class="menu">
-                 <li><a href="#">HOTEL</a>
+                 <li><a href="#contact" class="scroll">HOTEL</a>
                     <ul>
                         <li><a href="#">item 1</a></li>
                         <li><a href="#">item 2</a></li>
                     </ul>
                  </li>
-                 <li><a href="#">POKOJE</a></li>
-                 <li><a href="#">PAKIETY</a>
+                 <li><a href="#rooms" class="scroll">POKOJE</a></li>
+                 <li><a href="#packets" class="scroll">PAKIETY</a>
                     <ul>
                         <li><a href="#">item 1</a></li>
                         <li><a href="#">item 2</a></li>
@@ -35,23 +35,23 @@
                         <li><a href="#">item 4</a></li>
                     </ul>
                  </li>
-                 <li><a href="#">SPA</a></li>
-                 <li><a href="#">RESTAURACJA</a></li>
+                 <li><a href="#spa" class="scroll">SPA</a></li>
+                 <li><a href="#localization" class="scroll"">RESTAURACJA</a></li>
                  <li class="innerLogo">
                      <a href="index.html">
                          <img src="_assets/img/logo.png" alt="hotel spa">
                      </a>
                  </li>
-                 <li><a href="#">GALERIA</a></li>
-                 <li><a href="#">KONFERENCJA</a>
+                 <li><a href="#packets" class="scroll">GALERIA</a></li>
+                 <li><a href="#conference" class="scroll">KONFERENCJA</a>
                     <ul>
                         <li><a href="#">item 1</a></li>
                         <li><a href="#">item 2</a></li>
                         <li><a href="#">item 3</a></li>
                     </ul>
                  </li>
-                 <li><a href="#">WESELE</a></li>
-                 <li><a href="#">KONTAKT</a></li>
+                 <li><a href="#relax" class="scroll">WESELE</a></li>
+                 <li><a href="#contact" class="scroll">KONTAKT</a></li>
              </ol>
          </nav>
          <section class="reservation">
@@ -69,7 +69,7 @@
             <h2 class="counter">9/10</h2>
             OCENA GOŚCI
         </section>
-        <a href="#packets" class="fas fa-angle-down" id="slide-down-btn"></a>
+        <a href="#packets" class="fas fa-angle-down scroll" id="slide-down-btn"></a>
      </header>
      <main>
          <section class="packets" id="packets">
@@ -103,14 +103,14 @@
                 <button id="next"></button>
             </div>
          </section>
-         <section class="rooms">
+         <section class="rooms" id="rooms">
              <section class="content">
                  <h2 class="article-title">POKOJE</h2>
                  <p class="article-content">Hotel **** oferuje 131 miejsc noclegowych w 57 pokojach dwu- i trzyosobowych, studiach Junior i Senior oraz w luksusowym Apartamencie Prezydenckim. Cały obiekt jest w pełni klimatyzowany. Hotel jest również przystosowany do przyjęcia osób niepełnosprawnych.</p>
                  <button class="article-btn">WYBIERZ SWÓJ POKÓJ</button>
              </section>
          </section>
-         <section class="spa">
+         <section class="spa" id="spa">
             <figure class="slider">
                 <img src="_assets/img/spa_img0.png" class="fullWidth" id="spaImg" alt="spa">
                 <div class="navigation">
@@ -125,14 +125,14 @@
                  <button class="article-btn">DOWIEDZ SIĘ WIĘCEJ</button>
              </section>
          </section>
-         <section class="localization">
+         <section class="localization" id="localization">
              <section class="content">
                  <h2 class="article-title">PIĘKNA LOKALIZACJA</h2>
                  <p class="article-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
                  <button class="article-btn">ODKRYJ TO MIEJSCE</button>
              </section>
          </section>
-         <section class="conference">
+         <section class="conference" id="conference">
             <figure class="slider">
                 <img src="_assets/img/conference_img0.png" class="fullWidth" id="conferenceImg" alt="konferencja">
                 <div class="navigation">
@@ -147,13 +147,13 @@
                  <button class="article-btn">SPRAWDŹ NASZĄ OFERTĘ</button>
              </section>
          </section>
-         <section class="relax">
+         <section class="relax" id="relax">
              <section class="content">
                  <h2 class="article-title">WYPOCZYNEK Z RODZINĄ</h2>
                  <p class="article-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
              </section>
          </section>
-         <section class="contact">
+         <section class="contact" id="contact">
              <aside class="map">
                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2560.789495052599!2d19.93449631589523!3d50.07150382247764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47165b06a45d972b%3A0x30ed2e964d1d4b82!2sMagia+Day+Spa!5e0!3m2!1spl!2spl!4v1534515877209" frameborder="0" style="border:0" allowfullscreen></iframe>
              </aside>
@@ -216,7 +216,7 @@
             </a>
          </aside>
          <button id="top-btn">
-             <a href="#header">
+             <a href="#header" class="scroll">
                 <img src="_assets/img/up-arrow.png" alt="">
             </a>
          </button>

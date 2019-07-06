@@ -104,25 +104,6 @@ document.addEventListener("DOMContentLoaded", ()=> {
 		conferenceSlider(1);
 	}, 7000);
 
-	
-	// SMOOTH_SCROLL_100VH_HEADER
-	const slideDownBtn = document.getElementById("slide-down-btn");
-
-	slideDownBtn.addEventListener("click", (e) => {
-		e.preventDefault();
-		const header = document.getElementById("header");
-		window.smoothScrollTo(0, header.clientHeight, 2000);
-	}, false);
-
-
-	// SMOOTH_SCROLL_TO_TOP
-	const topBtn = document.getElementById("top-btn");
-
-	topBtn.addEventListener("click", (e)=> {
-		e.preventDefault();
-		window.smoothScrollTo(0, 0, 2000);
-	}, false);
-
 
 	// #AJAX#
 	const sendBtn = document.getElementById("send-btn");
@@ -228,34 +209,63 @@ function pageRequest(obj) {
 
 
 // SMOOTH_SCROLL_EXTERNAL_SCRIPT
-/**
- * Smooth scroll animation
- * @param {int} endX: destination x coordinate
- * @param {int) endY: destination y coordinate
- * @param {int} duration: animation duration in ms
- */
-window.smoothScrollTo = function (endX, endY, duration) {
-	var startX = window.scrollX || window.pageXOffset,
-		startY = window.scrollY || window.pageYOffset,
-		distanceX = endX - startX,
-		distanceY = endY - startY,
-		startTime = new Date().getTime();
+// Vanilla JavaScript Scroll to Anchor
+// @ https://perishablepress.com/vanilla-javascript-scroll-anchor/
 
-	duration = typeof duration !== 'undefined' ? duration : 400;
+function scrollTo() {
+  const links = document.querySelectorAll('.scroll');
+  links.forEach(each => (each.onclick = scrollAnchors));
+}
 
-	// Easing function
-	var easeInOutQuart = function (time, from, distance, duration) {
-		if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
-		return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
-	};
+scrollTo();
 
-	var timer = window.setInterval(function () {
-		var time = new Date().getTime() - startTime,
-			newX = easeInOutQuart(time, startX, distanceX, duration),
-			newY = easeInOutQuart(time, startY, distanceY, duration);
-		if (time >= duration) {
-			window.clearInterval(timer);
-		}
-		window.scrollTo(newX, newY);
-	}, 1000 / 60); // 60 fps
-};
+function scrollAnchors(e, respond = null) {
+  const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+  e.preventDefault();
+  var targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+  const targetAnchor = document.querySelector(targetID);
+  if (!targetAnchor) return;
+  const originalTop = distanceToTop(targetAnchor);
+  window.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
+  const checkIfDone = setInterval(function() {
+    const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+    if (distanceToTop(targetAnchor) === 0 || atBottom) {
+      targetAnchor.tabIndex = '-1';
+      targetAnchor.focus();
+      window.history.pushState('', '', targetID);
+      clearInterval(checkIfDone);
+    }
+  }, 100);
+}
+
+// /**
+//  * Smooth scroll animation
+//  * @param {int} endX: destination x coordinate
+//  * @param {int) endY: destination y coordinate
+//  * @param {int} duration: animation duration in ms
+//  */
+// window.smoothScrollTo = function (endX, endY, duration) {
+// 	var startX = window.scrollX || window.pageXOffset,
+// 		startY = window.scrollY || window.pageYOffset,
+// 		distanceX = endX - startX,
+// 		distanceY = endY - startY,
+// 		startTime = new Date().getTime();
+//
+// 	duration = typeof duration !== 'undefined' ? duration : 400;
+//
+// 	// Easing function
+// 	var easeInOutQuart = function (time, from, distance, duration) {
+// 		if ((time /= duration / 2) < 1) return distance / 2 * time * time * time * time + from;
+// 		return -distance / 2 * ((time -= 2) * time * time * time - 2) + from;
+// 	};
+//
+// 	var timer = window.setInterval(function () {
+// 		var time = new Date().getTime() - startTime,
+// 			newX = easeInOutQuart(time, startX, distanceX, duration),
+// 			newY = easeInOutQuart(time, startY, distanceY, duration);
+// 		if (time >= duration) {
+// 			window.clearInterval(timer);
+// 		}
+// 		window.scrollTo(newX, newY);
+// 	}, 1000 / 60); // 60 fps
+// };
